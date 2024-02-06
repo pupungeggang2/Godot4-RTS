@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2t03u08mpnmg"]
+[gd_scene load_steps=7 format=3 uid="uid://c2t03u08mpnmg"]
 
 [ext_resource type="Script" path="res://Script/Scene/game.gd" id="1_pici3"]
 [ext_resource type="Texture2D" uid="uid://bofsn4ucflehv" path="res://Image/Player/Player.png" id="2_07a3l"]
 [ext_resource type="Script" path="res://Script/Node/player.gd" id="2_n8i8l"]
 [ext_resource type="Texture2D" uid="uid://bwmv7pyf3q5rr" path="res://Image/Component/IconEnergy.png" id="4_53en3"]
 [ext_resource type="Texture2D" uid="uid://blsth04j8wpeq" path="res://Image/Component/IconHP.png" id="5_fxg5w"]
+[ext_resource type="Theme" uid="uid://bx838n0islxiu" path="res://Resource/font_main.tres" id="5_w4cym"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_pici3")
+
+[node name="TileFloor" type="TileMap" parent="."]
+format = 2
 
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("2_n8i8l")
@@ -17,26 +21,45 @@ texture = ExtResource("2_07a3l")
 
 [node name="Enemy" type="Node2D" parent="."]
 
+[node name="Projectile" type="Node2D" parent="."]
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="IconEnergy" type="Sprite2D" parent="UI"]
-position = Vector2(200, 590)
-texture = ExtResource("4_53en3")
-
 [node name="IconHp" type="Sprite2D" parent="UI"]
-position = Vector2(320, 591)
+position = Vector2(40, 600)
 texture = ExtResource("5_fxg5w")
+centered = false
 
 [node name="TextHP" type="Label" parent="UI"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 88.0
+offset_top = 604.0
+offset_right = 128.0
+offset_bottom = 627.0
+theme = ExtResource("5_w4cym")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="IconEnergy" type="Sprite2D" parent="UI"]
+position = Vector2(200, 600)
+texture = ExtResource("4_53en3")
+centered = false
 
 [node name="TextEnergy" type="Label" parent="UI"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 248.0
+offset_top = 604.0
+offset_right = 288.0
+offset_bottom = 636.0
+theme = ExtResource("5_w4cym")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="PlayerHand" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 640.0
+offset_right = 680.0
+offset_bottom = 720.0
