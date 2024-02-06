@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2t03u08mpnmg"]
+
+[ext_resource type="Script" path="res://Script/Scene/game.gd" id="1_40ebt"]
+[ext_resource type="Script" path="res://Script/Node/player.gd" id="2_7dniy"]
+[ext_resource type="Texture2D" uid="uid://bofsn4ucflehv" path="res://Image/Player/Player.png" id="3_5rd4k"]
+[ext_resource type="Texture2D" uid="uid://blsth04j8wpeq" path="res://Image/Component/IconHP.png" id="4_ydq6i"]
+[ext_resource type="Theme" uid="uid://bx838n0islxiu" path="res://Resource/font_main.tres" id="5_b2wxt"]
+[ext_resource type="Texture2D" uid="uid://bwmv7pyf3q5rr" path="res://Image/Component/IconEnergy.png" id="6_7toip"]
+[ext_resource type="Texture2D" uid="uid://bfhsurnp1xvwn" path="res://Image/Effect/Effect001.png" id="7_ftcxp"]
+[ext_resource type="Texture2D" uid="uid://h1jnc0ja6nn5" path="res://Image/Component/FrameSelect.png" id="8_uxqrf"]
+
+[node name="Field" type="Node2D"]
+script = ExtResource("1_40ebt")
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="TileFloor" type="TileMap" parent="."]
+format = 2
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("2_7dniy")
+
+[node name="Image" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_5rd4k")
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Projectile" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="IconHp" type="Sprite2D" parent="UI"]
+position = Vector2(40, 600)
+texture = ExtResource("4_ydq6i")
+centered = false
+
+[node name="TextHP" type="Label" parent="UI"]
+offset_left = 88.0
+offset_top = 604.0
+offset_right = 128.0
+offset_bottom = 636.0
+theme = ExtResource("5_b2wxt")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="IconEnergy" type="Sprite2D" parent="UI"]
+position = Vector2(200, 600)
+texture = ExtResource("6_7toip")
+centered = false
+
+[node name="TextEnergy" type="Label" parent="UI"]
+offset_left = 248.0
+offset_top = 604.0
+offset_right = 288.0
+offset_bottom = 636.0
+theme = ExtResource("5_b2wxt")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="PlayerSkill" type="ColorRect" parent="UI"]
+offset_left = 40.0
+offset_top = 640.0
+offset_right = 120.0
+offset_bottom = 720.0
+
+[node name="PlayerHand" type="ColorRect" parent="UI"]
+offset_left = 120.0
+offset_top = 640.0
+offset_right = 760.0
+offset_bottom = 720.0
+
+[node name="Skill" type="Sprite2D" parent="UI"]
+position = Vector2(80, 680)
+texture = ExtResource("7_ftcxp")
+
+[node name="SkillReady" type="Sprite2D" parent="UI"]
+position = Vector2(80, 680)
+texture = ExtResource("8_uxqrf")
+
+[node name="PlayerCool" type="ColorRect" parent="UI"]
+offset_left = 40.0
+offset_top = 640.0
+offset_right = 120.0
+offset_bottom = 720.0
+color = Color(0.0941176, 0.305882, 1, 0.498039)
