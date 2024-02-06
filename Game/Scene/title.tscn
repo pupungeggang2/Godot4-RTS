@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg38tt8gbm4an"]
+
+[ext_resource type="Script" path="res://Script/Scene/title.gd" id="1_u3e42"]
+[ext_resource type="Theme" uid="uid://bx838n0islxiu" path="res://Resource/font_main.tres" id="2_k183c"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_u3e42")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackGround" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="TextTitle" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 31.0
+theme = ExtResource("2_k183c")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Desserterria RTS"
+
+[node name="TextStart" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 665.0
+offset_right = 1279.0
+offset_bottom = 718.0
+theme = ExtResource("2_k183c")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Click to start."
+horizontal_alignment = 1
+vertical_alignment = 1
